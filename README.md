@@ -12,8 +12,8 @@ is up and running, there will be two list available on the top of the window.For
 be able to check the order, he/she should select a country and than a city.Within a couple of
 seconds, the information will be available on the screen.
 
-## Language used
+## Language used :rainbow:
 JAVA JDK 11
 
-## Application crator
+## Application creator :loudspeaker:
 :woman_student: Chirita Gabriela
