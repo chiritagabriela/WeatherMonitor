@@ -1,6 +1,14 @@
 package ro.mta.se.lab.model;
 
+/**
+ * Class defining weather info model
+ *
+ * @author Chirita Gabriela
+ */
 public class WeatherInfoModel {
+    /**
+     * Member description
+     */
     String time;
     String weatherDescription;
     String degrees;
@@ -8,6 +16,15 @@ public class WeatherInfoModel {
     String wind;
     String icon;
 
+    /**
+     * WeatherInfoModel class constructor
+     * @param time represents the current time.
+     * @param weatherDescription represents the weather description of the city.
+     * @param degrees represents the temperature of the city.
+     * @param humidity represents the humidity of the city.
+     * @param wind represents the wind of the city.
+     * @param icon represents the image representing the weather of the city.
+     */
     public WeatherInfoModel(String time, String weatherDescription, String degrees,
                             String humidity, String wind, String icon) {
         this.time = time;

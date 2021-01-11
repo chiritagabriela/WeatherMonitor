@@ -7,7 +7,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONValue;
 import ro.mta.se.lab.model.CityModel;
 import ro.mta.se.lab.model.WeatherInfoModel;
-import ro.mta.se.lab.utility.RetriveInfo;
+import ro.mta.se.lab.utility.RetrieveInfo;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -15,10 +15,24 @@ import java.net.URL;
 import java.util.Map;
 import java.util.Scanner;
 
-public class RetriveInfoImpl implements RetriveInfo {
+/**
+ * Class defining how to get data from OpenWeatherMap
+ *
+ * @author Chirita Gabriela
+ */
+public class RetrieveInfoImpl implements RetrieveInfo {
 
+    /**
+     * Member description
+     */
     WeatherInfoModel weatherInfoModel = new WeatherInfoModel();
 
+
+    /**
+     * Method getWeatherString
+     * Returns the JSON that is obtained for calling OpenWeatherMap API.
+     * @param cityName indicates the name of the city that needs to be searched.
+     */
     @Override
     public String getWeatherString(String cityName) {
 
@@ -44,6 +58,11 @@ public class RetriveInfoImpl implements RetriveInfo {
         return null;
     }
 
+    /**
+     * Method getCities
+     * takes the input file and create and observable list of city models.
+     *
+     */
     @Override
     public ObservableList<CityModel> getCities() {
 

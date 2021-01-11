@@ -13,12 +13,27 @@ import java.util.Map;
 
 import static java.lang.Math.round;
 
+/**
+ * Class defining the parsing of JSON
+ *
+ * @author Chirita Gabriela
+ */
 public class JSONParserImpl implements JSONParser {
 
+    /**
+     * Method convertToCelsius
+     * Converts degrees from Kelvin to Celsius
+     *
+     */
     private float convertToCelsius(double degrees) {
         return (float) (degrees - 273.15);
     }
 
+    /**
+     * Method parseJSON
+     * Parses the JSON that is received from OpenWeatherMap API
+     * and returns a WeatherInfoModel that contains all the information needed for the view.
+     */
     @Override
     public WeatherInfoModel parseJSON(String toBeParsed) {
 
