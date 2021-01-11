@@ -4,17 +4,15 @@ public class WeatherInfoModel {
     String time;
     String weatherDescription;
     String degrees;
-    String precipitation;
     String humidity;
     String wind;
     String icon;
 
-    public WeatherInfoModel(String time, String weatherDescription, String degrees, String precipitation,
+    public WeatherInfoModel(String time, String weatherDescription, String degrees,
                             String humidity, String wind, String icon) {
         this.time = time;
         this.weatherDescription = weatherDescription;
         this.degrees = degrees;
-        this.precipitation = precipitation;
         this.humidity = humidity;
         this.wind = wind;
         this.icon = icon;
@@ -54,14 +52,6 @@ public class WeatherInfoModel {
 
     public void setDegrees(String degrees) {
         this.degrees = degrees;
-    }
-
-    public String getPrecipitation() {
-        return precipitation;
-    }
-
-    public void setPrecipitation(String precipitation) {
-        this.precipitation = precipitation;
     }
 
     public String getHumidity() {

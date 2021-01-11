@@ -1,7 +1,5 @@
 package ro.mta.se.lab;
-
 import javafx.application.Application;
-
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -35,8 +33,9 @@ public class Main extends Application {
             primaryStage.setTitle("MTAWeatherMonitor");
             primaryStage.centerOnScreen();
             primaryStage.setResizable(false);
-            primaryStage.setOpacity(0.9);
+            primaryStage.setOpacity(1);
             primaryStage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
         }

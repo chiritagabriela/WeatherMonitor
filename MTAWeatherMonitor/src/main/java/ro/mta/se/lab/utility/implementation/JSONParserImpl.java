@@ -1,12 +1,17 @@
 package ro.mta.se.lab.utility.implementation;
 
-import org.json.JSONObject;
+import org.json.simple.JSONObject;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONValue;
 import ro.mta.se.lab.model.WeatherInfoModel;
 import ro.mta.se.lab.utility.JSONParser;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Map;
+
+import static java.lang.Math.round;
 
 public class JSONParserImpl implements JSONParser {
 
@@ -21,19 +26,29 @@ public class JSONParserImpl implements JSONParser {
         JSONObject object = (JSONObject) JSONValue.parse(toBeParsed);
 
         Map mapper = (Map) object.get("main");
-        weatherInfoModel.setDegrees(String.valueOf(convertToCelsius((double)mapper.get("temp"))));
-        long value = (long) mapper.get("humidity");
-        weatherInfoModel.setHumidity(String.valueOf(value));
+        weatherInfoModel.setDegrees(String.valueOf(round(convertToCelsius((double)mapper.get("temp")))));
+        String value = mapper.get("humidity").toString();
+        weatherInfoModel.setHumidity(value+"%");
 
         Map wind = (Map) object.get("wind");
-        double windSpeed = (double) wind.get("speed");
-        weatherInfoModel.setWind(String.valueOf(windSpeed));
+        String windSpeed = wind.get("speed").toString();
+        weatherInfoModel.setWind(windSpeed+"km/h");
 
         JSONArray jsonArray = (JSONArray) object.get("weather");
         Map weather = (Map) jsonArray.iterator().next();
         weatherInfoModel.setWeatherDescription(((String) weather.get("main")));
         weatherInfoModel.setIcon((String) weather.get("icon"));
 
+        LocalDateTime now = LocalDateTime.now();
+        String day = now.getDayOfWeek().toString().toLowerCase();
+        day = day.substring(0, 1).toUpperCase() + day.substring(1);
+
+        if(now.getHour() > 0 && now.getHour() < 12){
+            weatherInfoModel.setTime((day + ",  " + now.getHour() + ":" + now.getMinute()+" AM"));
+        }
+        else{
+            weatherInfoModel.setTime((day + ",  " + now.getHour() + ":" + now.getMinute()+" PM"));
+        }
         return weatherInfoModel;
     }
 }
