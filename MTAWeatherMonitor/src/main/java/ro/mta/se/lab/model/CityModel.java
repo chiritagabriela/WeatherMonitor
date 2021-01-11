@@ -3,13 +3,30 @@ package ro.mta.se.lab.model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+/**
+ * Class defining city model
+ *
+ * @author Chirita Gabriela
+ */
 public class CityModel {
+
+    /**
+     * Member description
+     */
     StringProperty cityID;
     StringProperty cityName;
     StringProperty cityLat;
     StringProperty cityLon;
     StringProperty cityCountryCode;
 
+    /**
+     * CityModel class constructor
+     * @param cityID represents the id of the city.
+     * @param cityName represents the name of the city.
+     * @param cityLat represents the latitude of the city.
+     * @param cityLon represents the longitude of the city.
+     * @param cityCountryCode represents the country code of the city.
+     */
     public CityModel(String cityID, String cityName, String cityLat, String cityLon, String cityCountryCode) {
         this.cityID = new SimpleStringProperty(cityID);
         this.cityName = new SimpleStringProperty(cityName);

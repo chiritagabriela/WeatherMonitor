@@ -4,22 +4,31 @@ import javafx.scene.control.Label;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import ro.mta.se.lab.model.CityModel;
 import ro.mta.se.lab.model.WeatherInfoModel;
 import ro.mta.se.lab.utility.JSONParser;
+import ro.mta.se.lab.utility.RetrieveInfo;
 import ro.mta.se.lab.utility.implementation.JSONParserImpl;
-import ro.mta.se.lab.utility.RetriveInfo;
-import ro.mta.se.lab.utility.implementation.RetriveInfoImpl;
+import ro.mta.se.lab.utility.RetrieveInfo;
+import ro.mta.se.lab.utility.implementation.RetrieveInfoImpl;
 
 import java.util.ArrayList;
 import java.util.List;
+/**
+ * Class defining main controller
+ * Main controller is the controller that takes the CityModel and maps
+ * it to its view, MainView.
+ *
+ * @author Chirita Gabriela
+ */
 
 public class MainController {
 
+    /**
+     * Member description
+     */
     final private ObservableList<CityModel> cities;
-    public AnchorPane anchor;
-    RetriveInfo retriveInfo = new RetriveInfoImpl();
+    RetrieveInfo retrieveInfo = new RetrieveInfoImpl();
     JSONParser jsonParser = new JSONParserImpl();
 
     @FXML
@@ -41,10 +50,19 @@ public class MainController {
     @FXML
     private Label icon;
 
+    /**
+     * MainController class constructor
+     * @param cities represents the list of cities available in the application.
+     */
     public MainController(ObservableList<CityModel> cities) {
         this.cities = cities;
     }
 
+    /**
+     * Method countryExists
+     * @param country indicates the country that needs to be searched.
+     * @param position indicates the last index that needs to be checked in searching the country.
+     */
     boolean countryExists(String country, int position) {
 
         for (int i=0;i<position;i++) {
@@ -55,6 +73,11 @@ public class MainController {
        return false;
     }
 
+    /**
+     * Method initialize
+     * Initializes the view, clearing every label and removing the
+     * countries that are duplicated.
+     */
     @FXML
     private void initialize(){
 
@@ -76,11 +99,17 @@ public class MainController {
         humidityValue.setText("");
         windValue.setText("");
     }
+
+    /**
+     * Method selectCity
+     * Sets the parameters in the view that are collected from the OpenWeatherMap.
+     *
+     */
     @FXML
     private void selectCity() {
         if(cityComboBox.getSelectionModel().getSelectedItem() != null) {
-            String retrivedInfo = retriveInfo.getWeatherString(cityComboBox.getSelectionModel().getSelectedItem());
-            WeatherInfoModel weatherInfoModel = jsonParser.parseJSON(retrivedInfo);
+            String retrievedInfo = retrieveInfo.getWeatherString(cityComboBox.getSelectionModel().getSelectedItem());
+            WeatherInfoModel weatherInfoModel = jsonParser.parseJSON(retrievedInfo);
 
             cityName.setText(cityComboBox.getSelectionModel().getSelectedItem());
             currentTime.setText(weatherInfoModel.getTime());
@@ -95,6 +124,11 @@ public class MainController {
         }
     }
 
+    /**
+     * Method selectCountry
+     * Gets the cities that are available for the selected country.
+     *
+     */
     @FXML
     private void selectCountry() {
         cityComboBox.getItems().clear();

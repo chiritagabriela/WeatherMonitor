@@ -6,20 +6,29 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import ro.mta.se.lab.controller.MainController;
 import ro.mta.se.lab.model.CityModel;
-import ro.mta.se.lab.utility.RetriveInfo;
-import ro.mta.se.lab.utility.implementation.RetriveInfoImpl;
+import ro.mta.se.lab.utility.RetrieveInfo;
+import ro.mta.se.lab.utility.implementation.RetrieveInfoImpl;
 
 import java.io.IOException;
 
+/**
+ * Class defining the main class of the application.
+ * Main class takes care of starting and setting everything up
+ * so that the controller,model and view can work together.
+ *
+ * @author Chirita Gabriela
+ */
 public class Main extends Application {
 
-    private RetriveInfo retriveInfo = new RetriveInfoImpl();
-    private ObservableList<CityModel> cities = retriveInfo.getCities();
+    /**
+     * Member description
+     */
+    private RetrieveInfo retrieveInfo = new RetrieveInfoImpl();
+    private ObservableList<CityModel> cities = retrieveInfo.getCities();
 
     public static void main(String[] args)
     {
         launch(args);
-
     }
 
     public void start(Stage primaryStage) {
