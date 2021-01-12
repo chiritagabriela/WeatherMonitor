@@ -13,11 +13,11 @@ public class CityModel {
     /**
      * Member description
      */
-    StringProperty cityID;
-    StringProperty cityName;
-    StringProperty cityLat;
-    StringProperty cityLon;
-    StringProperty cityCountryCode;
+    private StringProperty cityID;
+    private StringProperty cityName;
+    private StringProperty cityLat;
+    private StringProperty cityLon;
+    private StringProperty cityCountryCode;
 
     /**
      * CityModel class constructor
