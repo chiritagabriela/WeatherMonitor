@@ -9,12 +9,12 @@ public class WeatherInfoModel {
     /**
      * Member description
      */
-    String time;
-    String weatherDescription;
-    String degrees;
-    String humidity;
-    String wind;
-    String icon;
+    private String time;
+    private String weatherDescription;
+    private String degrees;
+    private String humidity;
+    private String wind;
+    private String icon;
 
     /**
      * WeatherInfoModel class constructor

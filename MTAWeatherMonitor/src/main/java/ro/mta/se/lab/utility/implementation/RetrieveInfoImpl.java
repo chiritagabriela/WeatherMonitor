@@ -19,11 +19,6 @@ import java.util.Scanner;
 public class RetrieveInfoImpl implements RetrieveInfo {
 
     /**
-     * Member description
-     */
-    WeatherInfoModel weatherInfoModel = new WeatherInfoModel();
-
-    /**
      * Method getWeatherString
      * Returns the JSON that is obtained for calling OpenWeatherMap API.
      * @param cityName indicates the name of the city that needs to be searched.

@@ -63,7 +63,7 @@ public class MainController {
      * @param country indicates the country that needs to be searched.
      * @param position indicates the last index that needs to be checked in searching the country.
      */
-    boolean countryExists(String country, int position) {
+    private boolean countryExists(String country, int position) {
 
         for (int i=0;i<position;i++) {
             if(cities.get(i).getCityCountryCode().equals(country)) {
