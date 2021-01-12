@@ -2,9 +2,6 @@ package ro.mta.se.lab.utility.implementation;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import org.json.JSONObject;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONValue;
 import ro.mta.se.lab.model.CityModel;
 import ro.mta.se.lab.model.WeatherInfoModel;
 import ro.mta.se.lab.utility.RetrieveInfo;
@@ -12,7 +9,6 @@ import ro.mta.se.lab.utility.RetrieveInfo;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -26,7 +22,6 @@ public class RetrieveInfoImpl implements RetrieveInfo {
      * Member description
      */
     WeatherInfoModel weatherInfoModel = new WeatherInfoModel();
-
 
     /**
      * Method getWeatherString
