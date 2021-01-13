@@ -3,7 +3,7 @@
 
 ## General purpose :books:
 This software is designed to provide a simple yet useful application that users can use
-to verify weather in real time all around the world.It makes use of <strong>Open Weather Map<strong/>,
+to verify weather in real time all around the world.It makes use of <strong>Open Weather Map</strong>,
 an API which provides real time weather information with the help of JSON serialization.
   
 ## How to use application :keyboard:
