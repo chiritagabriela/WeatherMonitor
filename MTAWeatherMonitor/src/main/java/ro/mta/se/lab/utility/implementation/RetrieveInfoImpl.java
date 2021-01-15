@@ -58,7 +58,7 @@ public class RetrieveInfoImpl implements RetrieveInfo {
 
         ObservableList<CityModel> cityModels = FXCollections.observableArrayList();
 
-        File myObj = new File("C:\\Users\\gabri\\Desktop\\WeatherMonitor\\WeatherMonitor\\MTAWeatherMonitor\\src\\main\\resources\\inputFile\\input.txt");
+        File myObj = new File("src/main/resources/inputFile/input.txt");
         Scanner myReader = null;
         try {
             myReader = new Scanner(myObj);

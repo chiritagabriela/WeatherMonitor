@@ -1,16 +1,10 @@
 package ro.mta.se.lab.utility.implementation;
 
-import javafx.collections.FXCollections;
 import org.junit.Before;
 import org.junit.Test;
-import ro.mta.se.lab.model.CityModel;
 import ro.mta.se.lab.model.WeatherInfoModel;
 import ro.mta.se.lab.utility.JSONParser;
 import ro.mta.se.lab.utility.RetrieveInfo;
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
 
 import static org.junit.Assert.*;
 

@@ -7,9 +7,11 @@ import javafx.scene.image.ImageView;
 import ro.mta.se.lab.model.CityModel;
 import ro.mta.se.lab.model.WeatherInfoModel;
 import ro.mta.se.lab.utility.JSONParser;
+import ro.mta.se.lab.utility.Logger;
 import ro.mta.se.lab.utility.RetrieveInfo;
 import ro.mta.se.lab.utility.implementation.JSONParserImpl;
 import ro.mta.se.lab.utility.RetrieveInfo;
+import ro.mta.se.lab.utility.implementation.LoggerImpl;
 import ro.mta.se.lab.utility.implementation.RetrieveInfoImpl;
 
 import java.util.ArrayList;
@@ -108,6 +110,8 @@ public class MainController {
     @FXML
     private void selectCity() {
         if(cityComboBox.getSelectionModel().getSelectedItem() != null) {
+            Logger logger = new LoggerImpl();
+            logger.logData(cityComboBox.getSelectionModel().getSelectedItem(),countryComboBox.getSelectionModel().getSelectedItem());
             String retrievedInfo = retrieveInfo.getWeatherString(cityComboBox.getSelectionModel().getSelectedItem());
             WeatherInfoModel weatherInfoModel = jsonParser.parseJSON(retrievedInfo);
 
