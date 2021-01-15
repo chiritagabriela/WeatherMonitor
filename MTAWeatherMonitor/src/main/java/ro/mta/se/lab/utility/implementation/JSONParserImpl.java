@@ -23,7 +23,7 @@ public class JSONParserImpl implements JSONParser {
     /**
      * Method convertToCelsius
      * Converts degrees from Kelvin to Celsius
-     *
+     * @param degrees represents the temperature in Kelvin.
      */
     private float convertToCelsius(double degrees) {
         return (float) (degrees - 273.15);
@@ -33,6 +33,7 @@ public class JSONParserImpl implements JSONParser {
      * Method parseJSON
      * Parses the JSON that is received from OpenWeatherMap API
      * and returns a WeatherInfoModel that contains all the information needed for the view.
+     * @param  toBeParsed represents the JSON string obtained from OpenWeatherMap API.
      */
     @Override
     public WeatherInfoModel parseJSON(String toBeParsed) {

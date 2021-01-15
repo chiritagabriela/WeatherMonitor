@@ -35,6 +35,9 @@ public class WeatherInfoModel {
         this.icon = icon;
     }
 
+    /**
+     * WeatherInfoModel class empty constructor
+     */
     public WeatherInfoModel(){
 
     }

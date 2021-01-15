@@ -3,7 +3,7 @@ package ro.mta.se.lab.utility;
 import ro.mta.se.lab.model.WeatherInfoModel;
 
 /**
- * Interface defining JSONParserImpl
+ * Interface defining JSONParserImpl.
  *
  * @author Chirita Gabriela
  */
